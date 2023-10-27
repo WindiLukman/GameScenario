@@ -1,6 +1,6 @@
 public class Mage extends Character {
-    public Mage(String name) {
-        super(name);
+    public Mage(String name, int health) {
+        super(name, health);
     }
 
     @Override

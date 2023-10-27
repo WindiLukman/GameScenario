@@ -1,9 +1,11 @@
 public abstract class Character {
     private String name;
-    private Weapon weapon;
+    protected Weapon weapon;
+    private int health;
 
-    public Character(String name) {
+    public Character(String name, int health) {
         this.name = name;
+        this.health = health;
     }
 
     public void setWeapon(Weapon weapon) {
@@ -12,13 +14,19 @@ public abstract class Character {
 
     public void useWeapon(Character target) {
         if (weapon != null) {
-            weapon.attack(this, target);
+            int damage = weapon.getDamage();
+            target.receiveDamage(damage);
+            System.out.println(this + " attacks with " + weapon + " and hits " + target + " for " + damage + " damage.");
         }
+    }
+
+    public void receiveDamage(int damage) {
+        health -= damage;
     }
 
     @Override
     public String toString() {
-        return name;
+        return name + " (Health: " + health + ", Weapon: " + weapon + ")";
     }
 
     public abstract void display();

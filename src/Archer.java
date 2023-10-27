@@ -1,6 +1,6 @@
 public class Archer extends Character {
-    public Archer(String name) {
-        super(name);
+    public Archer(String name, int health) {
+        super(name, health);
     }
 
     @Override

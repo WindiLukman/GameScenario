@@ -1,6 +1,6 @@
 public class Troll extends Character {
-    public Troll(String name) {
-        super(name);
+    public Troll(String name, int health) {
+        super(name, health);
     }
 
     @Override
